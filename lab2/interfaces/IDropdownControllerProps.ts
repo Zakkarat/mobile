@@ -1,10 +1,9 @@
+import React from "react";
 export interface IDropdownControllerProps {
-    onTableFacultyFilter: (value:string) => void;
-    onTableYearFilter: (value:string) => void;
     filters: {
         faculty:string;
         year:string;
     }
-    onApply: () => void;
-    onCancel: () => void;
+    setFilters:React.Dispatch<React.SetStateAction<{faculty:string, year:string}>>;
+    setTable: React.Dispatch<React.SetStateAction<{header:string[], body:string[][]}>>;
 }

@@ -8,11 +8,11 @@ import styles from "../styles/DropdownControllerStyles";
 
 export const DropdownController = ({onTableFacultyFilter, onTableYearFilter, onApply, onCancel, filters}:IDropdownControllerProps) => {
     const filteredFaculties = filtrateTable(data.body, 1);
-
     const filteredYears = filtrateTable(data.body, 2);
 
     return (
         <View>
+            <Text style={{fontSize:24, paddingTop:5, fontWeight:"500"}}>Faculty:</Text>
             <Picker
                 style={styles}
                 onValueChange={onTableFacultyFilter}
@@ -20,6 +20,7 @@ export const DropdownController = ({onTableFacultyFilter, onTableYearFilter, onA
                 value={filters.faculty}
                 placeholder={{label: 'Select a Faculty...', value:''}}
             />
+            <Text style={{fontSize:24, paddingTop:5, fontWeight:"500"}}>Year:</Text>
             <Picker
                 style={styles}
                 onValueChange={onTableYearFilter}

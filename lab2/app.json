@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "lab2",
+    "version": "1.0.0",
+    "slug": "lab2",
+    "ios": {
+      "bundleIdentifier": "com.mobilelabs.lab3",
+      "buildNumber": "1.0.0"
+    }
+  }
+}
