@@ -1,0 +1,13 @@
+{
+  "data": {
+    "header": ["Name", "Faculty", "Year"],
+    "body": [
+      ["Igor", "FICT", "1"],
+      ["Mikhail", "IASA", "2"],
+      ["Hemu", "FPM", "1"],
+      ["Leonard", "IASA", "1"],
+      ["Bayek", "FPM", "3"],
+      ["Gennadiy", "FICT", "2"]
+    ]
+  }
+}
