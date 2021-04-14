@@ -25,7 +25,8 @@ export const History = () => {
             <Button disabled={history.length === 0} title={'Clear History'} onPress={clearHistory}/>
             {history.length !== 0 ?
                 history.map((table, i) => <StudentTable key={i} table={table}/>) :
-                <Text>Storage is empty</Text>}
+                <Text>Storage is empty</Text>
+            }
         </View>
     );
 }

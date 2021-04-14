@@ -1,9 +1,13 @@
 import React, {useEffect, useState} from "react";
-import {Button, View, Text} from "react-native";
+import {StyleSheet, Button, View, Text} from "react-native";
 import {IDropdownControllerProps} from "../interfaces/IDropdownControllerProps";
 import {data} from "../data/table.json";
 import filtrateTable from "../helpers/filtrateTable";
 import {TextPicker} from "./TextPicker";
+import {Break} from "./Break";
+
+const buttonOffset = StyleSheet.create({button: {marginBottom: 5}})
+
 
 export const DropdownController = ({setTable, setFilters, filters, onSave}:IDropdownControllerProps) => {
     const filteredFaculties = filtrateTable(data.body, 1);
@@ -61,8 +65,11 @@ export const DropdownController = ({setTable, setFilters, filters, onSave}:IDrop
             <TextPicker onTableDataFilter={onTableYearFilter} filteredData={filteredYears} chosen={filters.year}
                         defaultLabel={'Select a Year...'} describeText={'Year'}/>
             <Button title={"Apply"} onPress={onApply}/>
+            <Break/>
             <Button title={"Cancel"} onPress={onCancel}/>
+            <Break/>
             <Button title={"Save Table to History"} onPress={onSaveClick}/>
+            <Break/>
             <Text>{isSaved && 'Your table is saved now'}</Text>
         </View>
     );
