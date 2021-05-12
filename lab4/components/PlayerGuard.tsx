@@ -1,8 +1,9 @@
 import React, {Dispatch, SetStateAction, useState} from 'react';
 import {View, Text, Button, TextInput} from 'react-native';
 import Picker from "react-native-picker-select";
-import styles from "../styles/DropdownControllerStyles";
-import * as DocumentPicker from 'expo-document-picker';
+import stylesDrop from "../styles/DropdownControllerStyles";
+import {styles} from "../styles/styles";
+import {UploadSwitch} from "./Switchers/UploadSwitch";
 
 export const PlayerGuard = ({route, setURL}:{route:string, setURL:Dispatch<SetStateAction<string>>}) => {
     const [typeOfEnter, setTypeOfEnter] = useState('');
@@ -15,17 +16,8 @@ export const PlayerGuard = ({route, setURL}:{route:string, setURL:Dispatch<SetSt
         if(selectedType) {
             setTypeOfEnter(selectedType);
         }
-        console.log(selectedURL);
         if(selectedURL) {
             setURL(selectedURL);
-        }
-    }
-
-    const onFilePick = async () => {
-        const file = await DocumentPicker.getDocumentAsync();
-        console.log(file);
-        if (file.type !== "cancel") {
-            setSelectedURL(file.uri);
         }
     }
 
@@ -33,9 +25,9 @@ export const PlayerGuard = ({route, setURL}:{route:string, setURL:Dispatch<SetSt
         <View>
             {!typeOfEnter &&
         <>
-            <Text style={{fontSize: 12, paddingTop: 5, fontWeight: "500"}}>Choose your input type:</Text>
+            <Text style={styles.PlayerBlockText}>Choose input format:</Text>
             <Picker
-            style={styles}
+            style={stylesDrop}
             onValueChange={(value) => setSelectedType(value)}
             items={types}
             value={selectedType}
@@ -43,11 +35,7 @@ export const PlayerGuard = ({route, setURL}:{route:string, setURL:Dispatch<SetSt
             />
         </>
         }
-            {!!typeOfEnter ? typeOfEnter === "URL" ?
-                <TextInput style={{borderStyle:"solid"}} value={selectedURL} onChangeText={(text) => setSelectedURL(text)}/>
-            :
-                <Button title={"Pick File"} onPress={onFilePick}/>
-            : <></>}
+            <UploadSwitch typeOfEnter={typeOfEnter} selectedURL={selectedURL} setSelectedURL={setSelectedURL} />
             <Button title={'Apply'} onPress={applyChanges}/>
         </View>
     );

@@ -8,17 +8,20 @@ export const styles = StyleSheet.create({
         paddingHorizontal: 5,
     },
     button: {
+        borderRadius: 20,
         textAlign: "center",
         margin: 10,
         padding: 10,
-        backgroundColor: "#DDDDDD",
+        backgroundColor: "#375cb1",
     },
     textButton: {
+        color: "#fff",
         fontSize: 32
     },
     smallText: {
         fontSize: 14,
-        fontWeight: "500"
+        fontWeight: "500",
+        color: "#fff"
     },
     backgroundVideo: {
         position: 'absolute',
@@ -37,4 +40,17 @@ export const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
     },
+    PlayerBlockText: {
+        fontSize: 16,
+        paddingTop: 5,
+        fontWeight: "500",
+        textAlign:"center"
+    },
+    textInput: {
+        borderStyle:"solid",
+        borderWidth: 1,
+        borderRadius: 20,
+        fontSize: 24,
+        marginBottom: 10
+    }
 });

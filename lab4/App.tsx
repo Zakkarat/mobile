@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {Button, StyleSheet, Text, View} from 'react-native';
 import {Router} from "./components/Router";
-import {Switch} from "./components/Switch";
+import {RouteSwitch} from "./components/Switchers/RouteSwitch";
 
 export default function App() {
   const [route, setRoute] = useState("");
@@ -10,7 +10,7 @@ export default function App() {
   return (
     <View style={styles.container}>
       <Router route={route} setRoute={setRoute}/>
-      {route ? <Switch route={route}/> : <></>}
+      <RouteSwitch route={route}/>
     </View>
   );
 }

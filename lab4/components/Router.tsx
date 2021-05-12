@@ -1,5 +1,5 @@
-import React, {Dispatch, SetStateAction, useState} from 'react';
-import {Button, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import React, {Dispatch, SetStateAction} from 'react';
+import {Text, TouchableOpacity, View} from 'react-native';
 import {styles} from "../styles/styles";
 
 export const Router = ({route, setRoute}:{route:string, setRoute: Dispatch<SetStateAction<string>>}) => {
@@ -8,7 +8,7 @@ export const Router = ({route, setRoute}:{route:string, setRoute: Dispatch<SetSt
     return (
         <View>
             {!route ? (<>
-            <Text style={styles.text}>Choose type of file you want to interact with:</Text>
+            <Text style={styles.text}>Choose your player format:</Text>
             {options.map(option => (
                 <TouchableOpacity style={styles.button} onPress={() => setRoute(option)}>
                     <Text style={styles.textButton}>{option}</Text>
